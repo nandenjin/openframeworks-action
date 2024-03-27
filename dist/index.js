@@ -22024,11 +22024,7 @@ async function main3() {
     const solutionPath = (0, import_path4.resolve)(PROJECT_ROOT, (0, import_path4.basename)(PROJECT_ROOT) + ".sln");
     await (0, import_exec2.exec)(
       "msbuild",
-      [
-        solutionPath,
-        "/p:configuration=release",
-        "/property:MultiProcessorCompilation=true"
-      ],
+      [solutionPath, "/p:configuration=release", "/maxCpuCount"],
       {
         cwd: PROJECT_ROOT
       }
