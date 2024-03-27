@@ -22024,13 +22024,17 @@ async function main3() {
     const solutionPath = (0, import_path4.resolve)(PROJECT_ROOT, (0, import_path4.basename)(PROJECT_ROOT) + ".sln");
     await (0, import_exec2.exec)(
       "msbuild",
-      [solutionPath, "/p:configuration=release", "/p:platform=x64"],
+      [
+        solutionPath,
+        "/p:configuration=release",
+        "/property:MultiProcessorCompilation=true"
+      ],
       {
         cwd: PROJECT_ROOT
       }
     );
   } else {
-    await (0, import_exec2.exec)("make", [], { cwd: PROJECT_ROOT });
+    await (0, import_exec2.exec)("make", ["-j"], { cwd: PROJECT_ROOT });
   }
 }
 
