@@ -21994,7 +21994,7 @@ async function main2() {
 }
 function getExecutable(pgDirPath) {
   if (isWindows) {
-    return (0, import_path3.join)(pgDirPath, "projectGenerator.exe");
+    return (0, import_path3.join)(pgDirPath, "resources/app/app/projectGenerator.exe");
   } else if (isMacOS) {
     return (0, import_path3.join)(
       pgDirPath,
