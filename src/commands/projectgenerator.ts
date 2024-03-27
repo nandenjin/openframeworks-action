@@ -26,7 +26,7 @@ export default async function main() {
 
 function getExecutable(pgDirPath: string) {
   if (isWindows) {
-    return join(pgDirPath, 'projectGenerator.exe')
+    return join(pgDirPath, 'resources/app/app/projectGenerator.exe')
   } else if (isMacOS) {
     return join(
       pgDirPath,
