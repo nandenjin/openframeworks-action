@@ -5,11 +5,21 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext ts",
+    "lintfix": "eslint . --ext ts --fix",
+    "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,md,yml,yaml}\""
   },
   "author": "Kazumi Inada <hello@nandenjin.com>",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.20.2"
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
   }
 }
