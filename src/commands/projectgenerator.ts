@@ -39,9 +39,5 @@ function getExecutable(pgDirPath: string) {
 }
 
 function getArgs(ofRoot: string, projectRoot: string) {
-  if (isWindows) {
-    return [`/ofPath=` + ofRoot, '/verbose', projectRoot]
-  } else {
-    return [`--ofPath=` + ofRoot, '--verbose', projectRoot]
-  }
+  return [`--ofPath=` + ofRoot, '--verbose', projectRoot]
 }
