@@ -5,12 +5,17 @@ inputs:
   command:
     description: 'Command to run'
     required: true
-  version:
+  ofVersion:
     description: 'openFrameworks version'
-    default: '0.12.1'
-  root:
+    default: '0.12.0'
+  ofRoot:
     description: 'openFrameworks root directory'
     default: '.'
+  projectGeneratorDir:
+    description: 'Path for ProjectGenerator directory'
+  projectRoot:
+    description: 'Project root directory'
+
 runs:
   using: 'node20'
   main: 'dist/index.js'
