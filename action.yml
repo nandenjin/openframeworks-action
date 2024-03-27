@@ -1,7 +1,7 @@
-name: "setup-openframeworks-action"
-description: "Setup openFrameworks in workflow"
-author: "Kazumi Inada"
+name: 'setup-openframeworks-action'
+description: 'Setup openFrameworks in workflow'
+author: 'Kazumi Inada'
 inputs:
 runs:
-  using: "node20"
-  main: "dist/index.js"
+  using: 'node20'
+  main: 'dist/index.js'
