@@ -2,6 +2,15 @@ name: 'setup-openframeworks-action'
 description: 'Setup openFrameworks in workflow'
 author: 'Kazumi Inada'
 inputs:
+  command:
+    description: 'Command to run'
+    required: true
+  version:
+    description: 'openFrameworks version'
+    default: '0.12.1'
+  root:
+    description: 'openFrameworks root directory'
+    default: '.'
 runs:
   using: 'node20'
   main: 'dist/index.js'
