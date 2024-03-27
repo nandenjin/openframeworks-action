@@ -22006,11 +22006,7 @@ function getExecutable(pgDirPath) {
   throw new Error("Unsupported platform");
 }
 function getArgs(ofRoot, projectRoot) {
-  if (isWindows) {
-    return [`/ofPath=` + ofRoot, "/verbose", projectRoot];
-  } else {
-    return [`--ofPath=` + ofRoot, "--verbose", projectRoot];
-  }
+  return [`--ofPath=` + ofRoot, "--verbose", projectRoot];
 }
 
 // src/commands/build.ts
