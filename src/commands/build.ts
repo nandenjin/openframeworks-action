@@ -16,12 +16,16 @@ export default async function main() {
     const solutionPath = resolve(PROJECT_ROOT, basename(PROJECT_ROOT) + '.sln')
     await exec(
       'msbuild',
-      [solutionPath, '/p:configuration=release', '/p:platform=x64'],
+      [
+        solutionPath,
+        '/p:configuration=release',
+        '/property:MultiProcessorCompilation=true',
+      ],
       {
         cwd: PROJECT_ROOT,
       }
     )
   } else {
-    await exec('make', [], { cwd: PROJECT_ROOT })
+    await exec('make', ['-j'], { cwd: PROJECT_ROOT })
   }
 }
