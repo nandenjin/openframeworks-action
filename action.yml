@@ -11,10 +11,10 @@ inputs:
   of_root:
     description: 'openFrameworks root directory'
     default: '.'
-  project_generator_dir:
-    description: 'Path for ProjectGenerator directory'
   project_root:
     description: 'Project root directory'
+  project_generator_dir:
+    description: 'Path for ProjectGenerator directory'
 
 runs:
   using: 'node20'
