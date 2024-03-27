@@ -4,10 +4,7 @@ import { basename, resolve } from 'path'
 import { isWindows } from '../util/platform'
 
 export default async function main() {
-  const OF_ROOT = resolve(
-    process.cwd(),
-    getInput('of_root', { required: true })
-  )
+  const OF_ROOT = resolve(process.cwd(), getInput('of_root'))
   const PROJECT_ROOT = resolve(
     OF_ROOT,
     getInput('project_root', { required: true })

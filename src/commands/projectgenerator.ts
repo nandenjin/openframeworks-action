@@ -4,7 +4,7 @@ import { join, resolve } from 'path'
 import { exec } from '@actions/exec'
 
 export default async function main() {
-  const OF_ROOT = resolve(process.cwd(), getInput('ofRoot', { required: true }))
+  const OF_ROOT = resolve(process.cwd(), getInput('of_root'))
   const PROJECT_GENERATOR_DIR = resolve(
     OF_ROOT,
     getInput('project_generator_dir') || 'projectGenerator'
