@@ -8,7 +8,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext ts",
     "lintfix": "eslint . --ext ts --fix",
-    "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,md,yml,yaml}\""
+    "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,md,yml,yaml}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,jsx,json,md,yml,yaml}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "author": "Kazumi Inada <hello@nandenjin.com>",
   "license": "MIT",
@@ -19,6 +26,8 @@
     "esbuild": "^0.20.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "typescript": "^5.4.3"
   },
