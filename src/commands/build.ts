@@ -4,10 +4,13 @@ import { basename, resolve } from 'path'
 import { isWindows } from '../util/platform'
 
 export default async function main() {
-  const OF_ROOT = resolve(process.cwd(), getInput('ofRoot', { required: true }))
+  const OF_ROOT = resolve(
+    process.cwd(),
+    getInput('of_root', { required: true })
+  )
   const PROJECT_ROOT = resolve(
     OF_ROOT,
-    getInput('projectRoot', { required: true })
+    getInput('project_root', { required: true })
   )
 
   info(`Building project at ${PROJECT_ROOT}`)

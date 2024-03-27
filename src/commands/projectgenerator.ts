@@ -7,11 +7,11 @@ export default async function main() {
   const OF_ROOT = resolve(process.cwd(), getInput('ofRoot', { required: true }))
   const PROJECT_GENERATOR_DIR = resolve(
     OF_ROOT,
-    getInput('projectGeneratorDir') || 'projectGenerator'
+    getInput('project_generator_dir') || 'projectGenerator'
   )
   const PROJECT_ROOT = resolve(
     process.cwd(),
-    getInput('projectRoot', { required: true })
+    getInput('project_root', { required: true })
   )
 
   debug(`OF_ROOT: ${OF_ROOT}`)

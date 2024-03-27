@@ -7,8 +7,8 @@ import { join, resolve } from 'path'
 import { readdir } from 'fs/promises'
 
 export default async function main() {
-  const OF_ROOT = getInput('ofRoot')
-  const OF_VERSION = getInput('ofVersion')
+  const OF_ROOT = getInput('of_root')
+  const OF_VERSION = getInput('of_version')
 
   let platform: string, ext: string
 
