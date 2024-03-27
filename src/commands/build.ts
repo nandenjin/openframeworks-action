@@ -16,11 +16,7 @@ export default async function main() {
     const solutionPath = resolve(PROJECT_ROOT, basename(PROJECT_ROOT) + '.sln')
     await exec(
       'msbuild',
-      [
-        solutionPath,
-        '/p:configuration=release',
-        '/property:MultiProcessorCompilation=true',
-      ],
+      [solutionPath, '/p:configuration=release', '/maxCpuCount'],
       {
         cwd: PROJECT_ROOT,
       }
