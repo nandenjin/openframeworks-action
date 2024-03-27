@@ -1,4 +1,4 @@
-name: 'setup-openframeworks-action'
+name: 'openframeworks-action'
 description: 'Setup openFrameworks in workflow'
 author: 'Kazumi Inada'
 inputs:
