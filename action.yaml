@@ -1,4 +1,4 @@
-name: 'openframeworks-action'
+name: 'GitHub Action for openFrameworks'
 description: 'Setup openFrameworks in workflow'
 author: 'Kazumi Inada'
 inputs:
@@ -15,7 +15,6 @@ inputs:
     description: 'Project root directory'
   project_generator_dir:
     description: 'Path for ProjectGenerator directory'
-
 runs:
   using: 'node20'
   main: 'dist/index.js'
