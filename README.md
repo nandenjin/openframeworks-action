@@ -1,9 +1,8 @@
 # ⚙️ openframeworks-action
 
-![Version released](https://img.shields.io/github/v/release/nandenjin/openframeworks-action?style=flat-square)
-![Tags](https://img.shields.io/github/v/tag/nandenjin/openframeworks-action?style=flat-square)
-![Build Status](https://img.shields.io/github/actions/workflow/status/nandenjin/openframeworks-action/checks.yaml?style=flat-square)
-![License](https://img.shields.io/github/license/nandenjin/openframeworks-action?style=flat-square)
+[![Version released](https://img.shields.io/github/v/release/nandenjin/openframeworks-action?style=flat-square)](https://github.com/nandenjin/openframeworks-action/releases)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/nandenjin/openframeworks-action/checks.yaml?style=flat-square)](https://github.com/nandenjin/openframeworks-action/actions/workflows/checks.yaml)
+[![License](https://img.shields.io/github/license/nandenjin/openframeworks-action?style=flat-square)](https://github.com/nandenjin/openframeworks-action/blob/dev/LICENSE)
 
 GitHub Action for openFrameworks setup & build.
 
