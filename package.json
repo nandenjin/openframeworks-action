@@ -1,6 +1,6 @@
 {
   "name": "@nandenjin/openframeworks-action",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Setup openFrameworks on GitHub Actions",
   "main": "dist/index.js",
   "scripts": {
