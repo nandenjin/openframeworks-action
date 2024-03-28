@@ -1,6 +1,15 @@
-# openframeworks-action
+# ⚙️ openframeworks-action
 
-GitHub Action for openFrameworks setup & build
+![Version released](https://img.shields.io/github/v/release/nandenjin/openframeworks-action?style=flat-square)
+![Tags](https://img.shields.io/github/v/tag/nandenjin/openframeworks-action?style=flat-square)
+![Build Status](https://img.shields.io/github/actions/workflow/status/nandenjin/openframeworks-action/checks.yaml?style=flat-square)
+![License](https://img.shields.io/github/license/nandenjin/openframeworks-action?style=flat-square)
+
+GitHub Action for openFrameworks setup & build.
+
+- ✅️ Cross-platform
+  - ✅️ Tested: Windows & macOS
+  - ⌛️ Linux
 
 ```yaml
 # Download openFrameworks
@@ -26,15 +35,38 @@ GitHub Action for openFrameworks setup & build
     project_root: 'apps/myRepo/myApp'
 ```
 
-## Inputs
+## Commands
 
-| Name                    | Description                                   | Example             | Default              | On `setup-of` | On `projectgenerator` | On `build`  |
-| ----------------------- | --------------------------------------------- | ------------------- | -------------------- | ------------- | --------------------- | ----------- |
-| `command`               | The command to run                            |                     |                      | 🔴 Required   | 🔴 Required           | 🔴 Required |
-| `of_version`            | The version of openFrameworks to download     | `0.12.0`            | `0.12.0`             | 🟢 Optional   |                       |             |
-| `of_path`               | The path to the openFrameworks root directory | `path/to/of_root`   | `.`                  | 🟢 Optional   | 🟢 Optional           | 🟢 Optional |
-| `project_root`          | The path to the project root directory        | `apps/myRepo/myApp` |                      |               | 🔴 Required           | 🔴 Required |
-| `project_generator_dir` | The path to the projectGenerator directory    | `projectGenerator`  | `./projectGenerator` |               | 🟢 Optional           |             |
+### `setup-of`
+
+Downloads and extracts openFrameworks to the specified directory.
+
+| Input        |             | Description                               | Example  | Default   |
+| ------------ | ----------- | ----------------------------------------- | -------- | --------- |
+| `of_version` | 🟢 Optional | The version of openFrameworks to download | `0.12.0` | `0.12.0`  |
+| `of_path`    | 🟢 Optional | The path to the openFrameworks root dir   | `.`      | `.` (cwd) |
+
+### `projectgenerator`
+
+Generates a project for the specified directory using the projectGenerator.
+
+| Input                   |             | Description                                | Example             | Default              |
+| ----------------------- | ----------- | ------------------------------------------ | ------------------- | -------------------- |
+| `project_root`          | 🟥 Required | The path to the project root directory     | `apps/myRepo/myApp` |                      |
+| `of_root`               | 🟢 Optional | The path to the openFrameworks root dir    | `openFrameworks`    | `./openFrameworks`   |
+| `project_generator_dir` | 🟢 Optional | The path to the projectGenerator directory | `projectGenerator`  | `./projectGenerator` |
+
+### `build`
+
+Builds the project in the specified directory.
+
+- Windows: Uses MSBuild (**Requires additional step to setup `msbuild` command** e.g. `microsoft/setup-msbuild`)
+- macOS: Uses make
+
+| Input          |             | Description                             | Example             | Default            |
+| -------------- | ----------- | --------------------------------------- | ------------------- | ------------------ |
+| `project_root` | 🟥 Required | The path to the project root dir        | `apps/myRepo/myApp` |                    |
+| `of_root`      | 🟢 Optional | The path to the openFrameworks root dir | `openFrameworks`    | `./openFrameworks` |
 
 ## Example
 
@@ -43,6 +75,7 @@ jobs:
   build:
     strategy:
       matrix:
+        # Cross platform build
         os: [windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
 
