@@ -22,7 +22,7 @@
   "author": "Kazumi Inada <hello@nandenjin.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "20.11.30",
+    "@types/node": "20.16.1",
     "@typescript-eslint/eslint-plugin": "7.4.0",
     "@typescript-eslint/parser": "7.4.0",
     "esbuild": "0.20.2",
